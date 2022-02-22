@@ -27,6 +27,7 @@ input[type=number]::-webkit-inner-spin-button {
     --color-violet-hover: #609;
     --color-violet-hover-opacity: rgba(102, 0, 153, 0.603);
     --color-bg--gray--hover: rgb(211, 211, 211);
+    --bg-footer: #f7f7f7;
 }
 
 .btn--scroll {
@@ -135,7 +136,39 @@ header {
 .slider--wrapper {
     width: 100%;
     height: 500px;
-    background-color: #000;
+    overflow: hidden;
+    transition: all 0.4s;
+}
+
+.slides {
+    width: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+}
+
+.slide:nth-child(1) {
+    background-color: #609;
+}
+
+.slide:nth-child(2) {
+    background-color: #FFF;
+}
+
+.slide:nth-child(3) {
+    background-color: #604329;
+}
+
+.slide:nth-child(4) {
+    background-color: #3123;
+}
+
+.slide:nth-child(5) {
+    background-color: #603129;
 }
 
 .content {
@@ -276,7 +309,7 @@ header {
 }
 
 .recharge div {
-    width: 60%;
+    width: 70%;
     margin-top: 1rem;
     padding: 15px;
     border: 1px solid var(--color-black);
@@ -520,12 +553,124 @@ header {
 
 footer {
     width: 100%;
-    background-color: #609;     
+    display: block;
+    margin: 15px auto 0 auto;
+    background-color: var(--bg-footer);     
+}
+
+.footer--links {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer--links .left {
+    position: relative;
+    display: flex;
+    width: 60%;
+}
+
+.footer--links .left img {
+    margin-top: 30px;
+}
+
+.footer--links .left .footer--left--text {
+    position: absolute;
+    top: 30px;
+    left: 10%;
+}
+
+.footer--links .left .footer--left--text p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--color-black);
+}
+
+.footer--links .left .footer--left--text p:nth-child(1) {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 30px 0;
+    justify-content: space-between;
+}
+
+.right .right--links {
+    display: flex;
+    flex-direction: row;
+    padding-right: 20%;
+}
+
+.right .right--links ul {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right .right--links ul li {
+   margin-bottom: 25px;
+}
+
+.right .right--links ul li a{
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--color-black);
+}
+
+.right .right--social--media {
+    display: flex;
+}
+
+.right .right--social--media a {
+    font-size: 1.7rem;
+    margin-right: 15px;
+}
+
+.right .right--social--media a i {
+    color: var(--color-black);
+}
+
+.right .right--copy {
+    display: block;
+}
+
+.right .right--copy p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--color-black);
+}
+
+.right .right--copy div {
+    display: flex;
+    margin-top: 10px;
+}
+
+.right .right--copy div a {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--color-black);
+    margin-right: 15px;
+    text-decoration: underline;
+}
+
+.footer--images {
+    width: 100%;                        
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0;
+    background-color: var(--color-white);
+}
+
+.footer--images img {
+    width: 13%;
+    min-width: 100px;
 }
 
 /* RESPONSIVE */
-
-
 @media (max-width: 1024px) {
     .recharge {
         padding-right: 1rem;
