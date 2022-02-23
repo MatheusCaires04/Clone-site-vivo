@@ -1,18 +1,15 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    let count = 1
-    let maxSlider = document.querySelectorAll('.slide').length
-    let slider = document.querySelector('.slide')
+let index = 0
 
-    function action() {
-        setInterval(function() {
-            slider[count].style.display = 'none';
-            count++
-            if(count > maxSlider) {
-                count = 1
-            }
-            slider[count].style.display = 'block'
-        }, 3000)
+carousel()
+
+function carousel() {
+    let i;
+    let slide = document.getElementsByClassName('slide');
+    for (i = 0; i < slide.length; i++) {
+       slide[i].style.display = "none";  
     }
-
-    action()
-})
+    index++;
+    if (index > slide.length) {index = 1}    
+    slide[index-1].style.display = "block";  
+    setTimeout(carousel, 5000);
+}
